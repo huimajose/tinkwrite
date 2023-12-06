@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
 import TipTapMenuBar from "./TipTapMenuBar";
@@ -13,10 +13,14 @@ import { useCompletion } from "ai/react";
 
 type Props = { note: NoteType };
 
+
+
 const TipTapEditor = ({ note }: Props) => {
-  const [editorState, setEditorState] = React.useState(
-    note.editorState || `<h1>${note.name}</h1>`
+  const [editorState, setEditorState] = useState(
+    note['texto'] || `<h1>${note.name} </h1>`
   );
+
+ 
   const { complete, completion } = useCompletion({
     api: "/api/completion",
   });

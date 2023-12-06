@@ -2,6 +2,11 @@ import { db } from "@/lib/db";
 import { $notes } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+
+
+const supabase = createClient('https://iehsmuxjlrzfwordijiy.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllaHNtdXhqbHJ6ZndvcmRpaml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEzMzkzNjcsImV4cCI6MjAxNjkxNTM2N30.8hmf2igDjxqcd6WH0LgxLhhzp1z5ll4TZ1hTEiKYRYM');
+  
 
 export async function POST(req: Request) {
   try {
@@ -12,19 +17,20 @@ export async function POST(req: Request) {
     }
 
     noteId = parseInt(noteId);
-    const notes = await db.select().from($notes).where(eq($notes.id, noteId));
-    if (notes.length != 1) {
+    const { data: notes } = await supabase.from("notes").select().eq('id',noteId);
+
+    //const notes = await db.select().from($notes).where(eq($notes.id, noteId));
+    if (notes?.length != 1) {
       return new NextResponse("failed to update", { status: 500 });
     }
 
     const note = notes[0];
     if (note.editorState !== editorState) {
-      await db
-        .update($notes)
-        .set({
-          editorState,
-        })
-        .where(eq($notes.id, noteId));
+     
+      const { error } = await supabase
+  .from('notes')
+  .update({'texto': editorState })
+  .eq('id', noteId)
     }
     return NextResponse.json(
       {

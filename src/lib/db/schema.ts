@@ -6,7 +6,7 @@ export const $notes = pgTable("notee", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   imageUrl: text("imageurl"),
   userId: text("user_id").notNull(),
-  editorState: text("editor_state"),
+  texto: text("editor_state"),
 });
 
 export type NoteType = typeof $notes.$inferInsert;
