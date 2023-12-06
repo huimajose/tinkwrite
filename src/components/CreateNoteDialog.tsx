@@ -71,12 +71,12 @@ const CreateNoteDialog = (props: Props) => {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Name..."
+            placeholder="Nome..."
           />
           <div className="h-4"></div>
           <div className="flex items-center gap-2">
             <Button type="reset" variant={"secondary"}>
-              Cancel
+              Cancelar
             </Button>
             <Button
               type="submit"
@@ -86,7 +86,7 @@ const CreateNoteDialog = (props: Props) => {
               {createNotebook.isLoading && (
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
               )}
-              Create
+              Criar
             </Button>
           </div>
         </form>
