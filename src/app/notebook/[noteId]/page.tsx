@@ -1,4 +1,6 @@
+
 import DeleteButton from "@/components/DeleteButton";
+import ShareButton from "@/components/ShareButton";
 import TipTapEditor from "@/components/TipTapEditor";
 import { Button } from "@/components/ui/button";
 import { clerk } from "@/lib/clerk-server";
@@ -32,6 +34,17 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
   }
   const note = notes[0];
 
+  const handleShareButtonClick = () => {
+    // Lógica para partilhar a nota
+    // Por exemplo, abrir um modal com um link partilhável
+    alert("Nota partilhada! Implemente a lógica real aqui.");
+  };
+
+  const handleExportButtonClick = () => {
+    // Lógica para exportar a nota
+    // Por exemplo, gerar um arquivo para download
+    alert("Nota exportada! Implemente a lógica real aqui.");
+  };
 
 
   return (
@@ -51,7 +64,9 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <span className="text-stone-500 font-semibold">{note.name}</span>
           <div className="ml-auto">
             <DeleteButton noteId={note.id} />
+            <ShareButton noteId={note.id} />
           </div>
+         
         </div>
 
         <div className="h-4"></div>
