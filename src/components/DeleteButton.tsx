@@ -27,7 +27,7 @@ const DeleteButton = ({ noteId }: Props) => {
       disabled={deleteNote.isLoading}
       onClick={() => {
         const confirm = window.confirm(
-          "Are you sure you want to delete this note?"
+          "Certeza que quer apagar esse apontamento?"
         );
         if (!confirm) return;
         deleteNote.mutate(undefined, {
