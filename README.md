@@ -36,9 +36,9 @@ Funcionalidades Principais
 Como Usar
 
     Login: Faça login na sua conta para começar.
-    Criar Projeto: Adicione os projetos nos quais você estará trabalhando.
-    Iniciar Apontamento: Escolha o projeto e clique em "Iniciar" para começar a registrar o tempo.
-    Parar Apontamento: Ao terminar, clique em "Parar" para encerrar o apontamento.
+    Criar apontamento: Adicione os apontamentos nos quais você estará trabalhando.
+    Iniciar Apontamento: Escolha o projeto e clique em "novo apontamento" para começar a registrar o tempo.
+    Parar Apontamento: O nosso editor guarda em tempo real as modificações para encerrar o apontamento apenas precisas fechar a janela.
     Visualizar Relatórios: Veja relatórios detalhados para analisar como você está gastando seu tempo.
 
 Configurações Adicionais
