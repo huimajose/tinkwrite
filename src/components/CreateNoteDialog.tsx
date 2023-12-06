@@ -56,15 +56,15 @@ const CreateNoteDialog = (props: Props) => {
         <div className="border-dashed border-2 flex border-green-600 h-full rounded-lg items-center justify-center sm:flex-col hover:shadow-xl transition hover:-translate-y-1 flex-row p-4">
           <Plus className="w-6 h-6 text-green-600" strokeWidth={3} />
           <h2 className="font-semibold text-green-600 sm:mt-2">
-            New Note Book
+            Novo
           </h2>
         </div>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>New Note Book</DialogTitle>
+          <DialogTitle>Novo apontamento</DialogTitle>
           <DialogDescription>
-            You can create a new note by clicking the button below.
+           Crie o seu apontamento digitando os dados abaixo.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>

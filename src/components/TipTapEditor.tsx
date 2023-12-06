@@ -69,7 +69,7 @@ const TipTapEditor = ({ note }: Props) => {
     if (debouncedEditorState === "") return;
     saveNote.mutate(undefined, {
       onSuccess: (data) => {
-        console.log("success update!", data);
+        console.log("Actualizado com sucesso!", data);
       },
       onError: (err) => {
         console.error(err);
@@ -81,7 +81,7 @@ const TipTapEditor = ({ note }: Props) => {
       <div className="flex">
         {editor && <TipTapMenuBar editor={editor} />}
         <Button disabled variant={"outline"}>
-          {saveNote.isLoading ? "Saving..." : "Saved"}
+          {saveNote.isLoading ? "Guardando as alterações..." : "Guardado"}
         </Button>
       </div>
 
@@ -90,11 +90,11 @@ const TipTapEditor = ({ note }: Props) => {
       </div>
       <div className="h-4"></div>
       <span className="text-sm">
-        Tip: Press{" "}
+        Dica: Clique{" "}
         <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">
           Shift + A
         </kbd>{" "}
-        for AI autocomplete
+        usar inteligencia artifical e autocompletar o texto
       </span>
     </>
   );
