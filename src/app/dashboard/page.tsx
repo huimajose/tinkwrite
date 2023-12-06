@@ -33,7 +33,7 @@ const DashboardPage = async (props: Props) => {
                 </Button>
               </Link>
               <div className="w-4"></div>
-              <h1 className="text-3xl font-bold text-gray-900">Meus apontamentos</h1>
+              <h3 className="text-3xl font-bold text-gray-900">Minhas notas</h3>
               <div className="w-4"></div>
               <UserButton />
             </div>

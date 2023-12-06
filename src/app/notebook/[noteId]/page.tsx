@@ -61,8 +61,8 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <span className="font-semibold">
            
           </span>
-          <span className="inline-block mx-1">/</span>
-          <span className="text-stone-500 font-semibold">{note.name}</span>
+          <span className="inline-block mx-1"></span>
+          <span className="text-stone-500 font-semibold"></span>
           <div className="ml-auto">
             <DeleteButton noteId={note.id} />
             
