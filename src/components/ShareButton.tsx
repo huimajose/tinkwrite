@@ -10,10 +10,9 @@ type Props = {
   noteId: number;
 };
 
-
 const ShareButton = ({ noteId }: Props) => {
     const router = useRouter();
-    const deleteNote = useMutation({
+    const shareNote = useMutation({
       mutationFn: async () => {
         const response = await axios.post("/api/shareNoteBook", {
           noteId,
@@ -21,30 +20,31 @@ const ShareButton = ({ noteId }: Props) => {
         return response.data;
       },
     });
+  
+    const handleShareClick = async () => {
+      try {
+        const result = await shareNote.mutateAsync();
+        if (result.link) {
+          // Aqui você pode exibir o link partilhável, por exemplo, em uma modal
+          alert(`Link partilhável: ${result.link}`);
+        } else {
+          console.error('Erro ao obter link partilhável.');
+        }
+      } catch (error) {
+        console.error('Erro ao solicitar link partilhável:', error);
+      }
+    };
+  
     return (
       <Button
-        variant={"outline"}
+        variant="outline"
         size="sm"
-        disabled={deleteNote.isLoading}
-        onClick={() => {
-          const confirm = window.confirm(
-            "Certeza que quer apagar esse apontamento?"
-          );
-          if (!confirm) return;
-          deleteNote.mutate(undefined, {
-            onSuccess: () => {
-              router.push("/dashboard");
-            },
-            onError: (err) => {
-              console.error(err);
-            },
-          });
-        }}
+        disabled={shareNote.isLoading}
+        onClick={handleShareClick}
       >
         <Share />
       </Button>
     );
   };
   
-
-export default ShareButton
+  export default ShareButton;
