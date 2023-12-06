@@ -9,6 +9,8 @@ import { and, eq } from "drizzle-orm";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
+import { createClient } from '@supabase/supabase-js'
+
 
 type Props = {
   params: {
@@ -18,16 +20,14 @@ type Props = {
 
 const NotebookPage = async ({ params: { noteId } }: Props) => {
   const { userId } = await auth();
-  if (!userId) {
-    return redirect("/dashboard");
-  }
-  const user = await clerk.users.getUser(userId);
-  const notes = await db
-    .select()
-    .from($notes)
-    .where(and(eq($notes.id, parseInt(noteId)), eq($notes.userId, userId)));
 
-  if (notes.length != 1) {
+  //const user = await clerk.users.getUser(userId);
+
+  const supabase = createClient('https://iehsmuxjlrzfwordijiy.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllaHNtdXhqbHJ6ZndvcmRpaml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEzMzkzNjcsImV4cCI6MjAxNjkxNTM2N30.8hmf2igDjxqcd6WH0LgxLhhzp1z5ll4TZ1hTEiKYRYM');
+  const { data: notes } = await supabase.from("notes").select().eq('id',noteId);
+
+
+  if (notes?.length != 1) {
     return redirect("/dashboard");
   }
   const note = notes[0];
@@ -43,7 +43,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           </Link>
           <div className="w-3"></div>
           <span className="font-semibold">
-            {user.firstName} {user.lastName}
+           
           </span>
           <span className="inline-block mx-1">/</span>
           <span className="text-stone-500 font-semibold">{note.name}</span>
