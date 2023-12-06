@@ -11,12 +11,13 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, userId } = body;
 
-    console.log(name);
+    const currentTimestamp = new Date().toISOString();
+
 
     // Inserir no Supabase
     const { data, error } = await supabase
       .from('notes')
-      .insert({ 'name':name, 'userId': userId }).select();
+      .insert({ 'name':name, 'userId': userId, 'criated': currentTimestamp }).select();
 
     if (error) {
       console.error("Erro ao inserir no Supabase:", error);
