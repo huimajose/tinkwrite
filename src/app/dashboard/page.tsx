@@ -63,7 +63,7 @@ const DashboardPage = async (props: Props) => {
                       </h3>
                       <div className="h-1"></div>
                       <p className="text-sm text-gray-500">
-                      {new Date(note.created).toLocaleDateString()}
+                      {new Date(note.criated).toLocaleDateString()}
                       </p>
                     </div>
                   </div>
