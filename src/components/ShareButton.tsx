@@ -15,7 +15,7 @@ const ShareButton = ({ noteId }: Props) => {
     const router = useRouter();
     const deleteNote = useMutation({
       mutationFn: async () => {
-        const response = await axios.post("/api/deleteNote", {
+        const response = await axios.post("/api/shareNoteBook", {
           noteId,
         });
         return response.data;
