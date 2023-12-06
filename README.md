@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Apontamento Simples e Amigável
 
-## Getting Started
+Este é um aplicativo de apontamento de horas projetado para ser simples, amigável e eficiente. Perfeito para acompanhar o tempo gasto em diferentes tarefas e projetos de maneira fácil.
+Funcionalidades Principais
 
-First, run the development server:
+    Registro Rápido: Faça apontamentos de tempo com apenas alguns cliques.
+    Organização por Projetos: Mantenha-se organizado atribuindo apontamentos a projetos específicos.
+    Relatórios Claros: Visualize facilmente o tempo dedicado a cada projeto ou tarefa.
+    Facilidade de Uso: Interface intuitiva para uma experiência de usuário amigável.
+    Histórico Completo: Acesse um histórico detalhado de todos os apontamentos anteriores.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    Como Usar
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Login: Faça login na sua conta para começar.
+    Criar Projeto: Adicione os projetos nos quais você estará trabalhando.
+    Iniciar Apontamento: Escolha o projeto e clique em "Iniciar" para começar a registrar o tempo.
+    Parar Apontamento: Ao terminar, clique em "Parar" para encerrar o apontamento.
+    Visualizar Relatórios: Veja relatórios detalhados para analisar como você está gastando seu tempo.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Configurações Adicionais
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    Notificações: Configure lembretes para garantir que você não esqueça de parar um apontamento.
+    Exportar Dados: Exporte seus dados para uso em outras ferramentas ou para backup.
 
-## Learn More
+    Apontamento Simples e Amigável
 
-To learn more about Next.js, take a look at the following resources:
+Este é um aplicativo de apontamento de horas projetado para ser simples, amigável e eficiente. Perfeito para acompanhar o tempo gasto em diferentes tarefas e projetos de maneira fácil.
+Funcionalidades Principais
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Registro Rápido: Faça apontamentos de tempo com apenas alguns cliques.
+    Organização por Projetos: Mantenha-se organizado atribuindo apontamentos a projetos específicos.
+    Relatórios Claros: Visualize facilmente o tempo dedicado a cada projeto ou tarefa.
+    Facilidade de Uso: Interface intuitiva para uma experiência de usuário amigável.
+    Histórico Completo: Acesse um histórico detalhado de todos os apontamentos anteriores.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Como Usar
 
-## Deploy on Vercel
+    Login: Faça login na sua conta para começar.
+    Criar Projeto: Adicione os projetos nos quais você estará trabalhando.
+    Iniciar Apontamento: Escolha o projeto e clique em "Iniciar" para começar a registrar o tempo.
+    Parar Apontamento: Ao terminar, clique em "Parar" para encerrar o apontamento.
+    Visualizar Relatórios: Veja relatórios detalhados para analisar como você está gastando seu tempo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Configurações Adicionais
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    Notificações: Configure lembretes para garantir que você não esqueça de parar um apontamento.
+    Exportar Dados: Exporte seus dados para uso em outras ferramentas ou para backup.
+
+Instalação Local
+
+Se você preferir ter o aplicativo em seu próprio servidor:
+
+    Clone este repositório.
+    Configure as dependências usando npm install.
+    Inicie o servidor com `npm run dev`.
+    Acesse o aplicativo em http://localhost:3000 no seu navegador.
+
+Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas, enviar solicitações de pull ou sugerir novas funcionalidades.
+Licença
+
+Este aplicativo é licenciado sob a Licença MIT.
