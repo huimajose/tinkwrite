@@ -14,17 +14,20 @@ import axios from "axios";
 import { Button } from "./ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-
+import { useAuth } from "@clerk/nextjs";
 type Props = {};
 
 const CreateNoteDialog = (props: Props) => {
   const router = useRouter();
   const [input, setInput] = React.useState("");
+  const {  userId } = useAuth();
+ 
 
   const createNotebook = useMutation({
     mutationFn: async () => {
       const response = await axios.post("/api/createNoteBook", {
         name: input,
+        userId: userId,
       });
       return response.data;
     },

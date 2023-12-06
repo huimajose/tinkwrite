@@ -2,7 +2,7 @@ import CreateNoteDialog from "@/components/CreateNoteDialog";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { UserButton, auth,currentUser  } from "@clerk/nextjs";
+import { UserButton, auth  } from "@clerk/nextjs";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const DashboardPage = async (props: Props) => {
   const { userId } = auth();
 
     const supabase = createClient('https://iehsmuxjlrzfwordijiy.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllaHNtdXhqbHJ6ZndvcmRpaml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEzMzkzNjcsImV4cCI6MjAxNjkxNTM2N30.8hmf2igDjxqcd6WH0LgxLhhzp1z5ll4TZ1hTEiKYRYM');
-  const { data: notes } = await supabase.from("notes").select();
+  const { data: notes } = await supabase.from("notes").select().eq('userId', userId);
 
   return (
     <>
