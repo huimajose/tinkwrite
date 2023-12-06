@@ -15,7 +15,7 @@ const TypewriterTitle = (props: Props) => {
           .typeString("🚀 Poupe seu tempo, aumente a sua criatividade.")
           .pauseFor(1000)
           .deleteAll()
-          .typeString("🤖 Tudo na palma das suas mãos.")
+          .typeString(" Tudo na palma das suas mãos.")
           .start();
       }}
     />
