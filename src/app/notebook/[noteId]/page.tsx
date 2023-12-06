@@ -1,6 +1,7 @@
 
 import DeleteButton from "@/components/DeleteButton";
 import ShareButton from "@/components/ShareButton";
+import ExportButton from "@/components/ExportButton";
 import TipTapEditor from "@/components/TipTapEditor";
 import { Button } from "@/components/ui/button";
 import { clerk } from "@/lib/clerk-server";
@@ -64,8 +65,16 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <span className="text-stone-500 font-semibold">{note.name}</span>
           <div className="ml-auto">
             <DeleteButton noteId={note.id} />
+            
+          </div>
+          <div className="ml-2">
+          
             <ShareButton noteId={note.id} />
           </div>
+          <div className="ml-2">
+          
+          <ExportButton noteId={note.id} />
+        </div>
          
         </div>
 

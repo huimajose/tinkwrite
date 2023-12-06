@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button } from "./ui/button";
-import { Share } from "lucide-react";
+import { FileDown } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,7 @@ type Props = {
 };
 
 
-const ShareButton = ({ noteId }: Props) => {
+const ExportButton = ({ noteId }: Props) => {
     const router = useRouter();
     const deleteNote = useMutation({
       mutationFn: async () => {
@@ -41,10 +41,10 @@ const ShareButton = ({ noteId }: Props) => {
           });
         }}
       >
-        <Share />
+        <FileDown />
       </Button>
     );
   };
   
 
-export default ShareButton
+export default ExportButton
