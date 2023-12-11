@@ -21,12 +21,14 @@ const ShareButton = ({ noteId }: Props) => {
       },
     });
   
+
+    console.log("Id da nota enviado para sharenote",noteId);
     const handleShareClick = async () => {
       try {
         const result = await shareNote.mutateAsync();
         if (result.link) {
           // Aqui você pode exibir o link partilhável, por exemplo, em uma modal
-          alert(`Link partilhável: ${result.link}`);
+          alert(`Link partilhável: ${result.link}/${noteId}`);
         } else {
           console.error('Erro ao obter link partilhável.');
         }

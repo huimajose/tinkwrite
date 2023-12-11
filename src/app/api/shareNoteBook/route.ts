@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     // Aqui você pode adicionar lógica para gerar um link partilhável
     // Vou usar um exemplo simples apenas para ilustrar
-    const shareableLink = `https://tinkwrite.vercel.app/notebook/${noteId}`;
+    const shareableLink = `https://tinkwrite.vercel.app/notebook`;
 
     console.log('link partilhavel: ',shareableLink);
     return NextResponse.json({ link: shareableLink });
