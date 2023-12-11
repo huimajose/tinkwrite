@@ -1,7 +1,7 @@
 import CreateNoteDialog from "@/components/CreateNoteDialog";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
+import CreateProjectDialog from "@/components/CreateProjectDialog";
 import { UserButton, auth  } from "@clerk/nextjs";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
@@ -53,6 +53,7 @@ const DashboardPage = async (props: Props) => {
           {/* display all the notes */}
           <div className="grid sm:grid-cols-3 md:grid-cols-5 grid-cols-1 gap-3">
             <CreateNoteDialog />
+            <CreateProjectDialog />
             {notes?.map((note) => {
               return (
                 <a href={`/notebook/${note.id}`} key={note.id}>
