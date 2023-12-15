@@ -158,7 +158,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <MenubarSeparator />
           <MenubarItem inset>Ecrã completo</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem inset>Hide Sidebar</MenubarItem>
+          <MenubarItem inset>Esconder</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
