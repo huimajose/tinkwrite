@@ -65,16 +65,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
   return (
     <div className="min-h-screen grainy p-8">
       <div className="max-w-4xl mx-auto">
-        <div className="border shadow-xl border-stone-200 rounded-lg p-4 flex items-center">
-          
-          <div className="w-3"></div>
-          <span className="font-semibold">
-           
-          </span>
-          <span className="inline-block mx-1"></span>
-         
-         
-          
+        <div className=" shadow-xl  p-4 flex items-center">      
         <Menubar>
       <MenubarMenu>
         <MenubarTrigger>Ficheiro</MenubarTrigger>
@@ -155,20 +146,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <MenubarItem inset>Esconder</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
-      <MenubarMenu>
-        <MenubarTrigger>Perfil</MenubarTrigger>
-        <MenubarContent>
-          <MenubarRadioGroup value="benoit">
-            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-          </MenubarRadioGroup>
-          <MenubarSeparator />
-          <MenubarItem inset>Editar</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem inset>Add Perfil</MenubarItem>
-        </MenubarContent>
-      </MenubarMenu>
+    
     </Menubar>
 
         </div>
