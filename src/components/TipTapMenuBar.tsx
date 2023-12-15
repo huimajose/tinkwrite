@@ -174,12 +174,18 @@ const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
       <MenubarMenu>
         <MenubarTrigger>Editar</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>
-            desfazer <MenubarShortcut>⌘Z</MenubarShortcut>
-          </MenubarItem>
-          <MenubarItem>
-            Refazer <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-          </MenubarItem>
+        <MenubarItem>
+      Desfazer <MenubarShortcut onClick={() => editor.chain().focus().undo().run()}>⌘Z</MenubarShortcut>
+    </MenubarItem>
+    <MenubarItem>
+     
+      <button
+        onClick={() => editor.chain().focus().redo().run()}
+        disabled={!editor.can().chain().focus().redo().run()}
+      > Refazer 
+        <Redo className="w-3 h-6" />
+      </button>
+    </MenubarItem>
           <MenubarSeparator />
           <MenubarSub>
             <MenubarSubTrigger>Encontrar</MenubarSubTrigger>
