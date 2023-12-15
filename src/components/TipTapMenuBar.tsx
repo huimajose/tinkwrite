@@ -17,6 +17,23 @@ import {
   Strikethrough,
   Undo,
 } from "lucide-react";
+import Link from "next/link";
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
+
 
 const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
   return (
@@ -121,6 +138,87 @@ const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
       >
         <Redo className="w-6 h-6" />
       </button>
+
+      <Menubar style={{ width: '1000px' }}>
+      <MenubarMenu>
+        <MenubarTrigger>Ficheiro</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>
+           Nova documento <MenubarShortcut>⌘N</MenubarShortcut>
+          </MenubarItem>
+         
+          <MenubarItem disabled>Janela privada</MenubarItem>
+          <MenubarSeparator />
+          <MenubarSub>
+            <MenubarSubTrigger>Partilhar</MenubarSubTrigger>
+            <MenubarSubContent>
+              <MenubarItem>link</MenubarItem>
+              <MenubarItem>Mensagens</MenubarItem>
+              <MenubarItem>Notas</MenubarItem>
+            </MenubarSubContent>
+          </MenubarSub>
+          <MenubarSeparator />
+          <MenubarItem>
+            Imprimir... <MenubarShortcut>⌘P</MenubarShortcut>
+          </MenubarItem>
+        
+          <Link href="/dashboard">
+          <MenubarItem>
+          Sair<MenubarShortcut>⌘esc</MenubarShortcut>
+          </MenubarItem>
+          </Link>
+
+          
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Editar</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>
+            desfazer <MenubarShortcut>⌘Z</MenubarShortcut>
+          </MenubarItem>
+          <MenubarItem>
+            Refazer <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+          </MenubarItem>
+          <MenubarSeparator />
+          <MenubarSub>
+            <MenubarSubTrigger>Encontrar</MenubarSubTrigger>
+            <MenubarSubContent>
+              <MenubarItem>Buscar na web</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Encontrar...</MenubarItem>
+              <MenubarItem>Encontrar Seguinte</MenubarItem>
+              <MenubarItem>Encontrar anterior</MenubarItem>
+            </MenubarSubContent>
+          </MenubarSub>
+          <MenubarSeparator />
+          <MenubarItem>Cortar</MenubarItem>
+          <MenubarItem>Copiar</MenubarItem>
+          <MenubarItem>Colar</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>ver</MenubarTrigger>
+        <MenubarContent>
+          <MenubarCheckboxItem>Mostrar sempre marcador</MenubarCheckboxItem>
+          <MenubarCheckboxItem checked>
+           Mostrar sempre url completa
+          </MenubarCheckboxItem>
+          <MenubarSeparator />
+          <MenubarItem inset>
+            Recarregar <MenubarShortcut>⌘R</MenubarShortcut>
+          </MenubarItem>
+          <MenubarItem disabled inset>
+            Forçar recarregar <MenubarShortcut>⇧⌘R</MenubarShortcut>
+          </MenubarItem>
+          <MenubarSeparator />
+          <MenubarItem inset>Ecrã completo</MenubarItem>
+          <MenubarSeparator />
+          <MenubarItem inset>Esconder</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    
+    </Menubar>
     </div>
   );
 };
