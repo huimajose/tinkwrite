@@ -91,7 +91,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
         </div>
         <Menubar>
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>Ficheiro</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
             New Tab <MenubarShortcut>⌘T</MenubarShortcut>
