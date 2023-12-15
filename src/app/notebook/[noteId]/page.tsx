@@ -66,11 +66,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
     <div className="min-h-screen grainy p-8">
       <div className="max-w-4xl mx-auto">
         <div className="border shadow-xl border-stone-200 rounded-lg p-4 flex items-center">
-          <Link href="/dashboard">
-            <Button className="bg-green-600" size="sm">
-              Voltar
-            </Button>
-          </Link>
+          
           <div className="w-3"></div>
           <span className="font-semibold">
            
@@ -78,10 +74,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <span className="inline-block mx-1"></span>
           <span className="text-stone-500 font-semibold"></span>
          
-          <div className="ml-2">
           
-          <ExportButton noteId={note.id} />
-        </div>
         <Menubar>
       <MenubarMenu>
         <MenubarTrigger>Ficheiro</MenubarTrigger>
@@ -106,9 +99,14 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <MenubarItem>
             Imprimir... <MenubarShortcut>⌘P</MenubarShortcut>
           </MenubarItem>
+        
+          <Link href="/dashboard">
           <MenubarItem>
-            Sair<MenubarShortcut>⌘esc</MenubarShortcut>
+          Sair<MenubarShortcut>⌘esc</MenubarShortcut>
           </MenubarItem>
+          </Link>
+
+          
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
