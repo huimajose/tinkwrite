@@ -175,8 +175,15 @@ const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
         <MenubarTrigger>Editar</MenubarTrigger>
         <MenubarContent>
         <MenubarItem>
-      Desfazer <MenubarShortcut onClick={() => editor.chain().focus().undo().run()}>⌘Z</MenubarShortcut>
-    </MenubarItem>
+
+        <button
+        onClick={() => editor.chain().focus().undo().run()}
+        disabled={!editor.can().chain().focus().undo().run()}
+      >
+             Desfazer <MenubarShortcut onClick={() => editor.chain().focus().undo().run()}>⌘Z</MenubarShortcut>
+ 
+      </button>
+   </MenubarItem>
     <MenubarItem>
      
       <button
