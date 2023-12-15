@@ -97,7 +97,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
            Nova aba <MenubarShortcut>⌘T</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
-            New Window <MenubarShortcut>⌘N</MenubarShortcut>
+            Nova janela <MenubarShortcut>⌘N</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled>New Incognito Window</MenubarItem>
           <MenubarSeparator />
