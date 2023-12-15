@@ -58,7 +58,12 @@ const DashboardPage = async (props: Props) => {
               return (
                 <a href={`/notebook/${note.id}`} key={note.id}>
                   <div className="border border-stone-300 rounded-lg overflow-hidden flex flex-col hover:shadow-xl transition hover:-translate-y-1">
-                    
+                  <Image
+                      width={100}
+                      height={50}
+                      alt={note.name}
+                      src="notepad.svg"
+                    />
                     <div className="p-4">
                       <h3 className="text-xl font-semibold text-gray-900">
                         {note.name}
