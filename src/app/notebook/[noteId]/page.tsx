@@ -132,7 +132,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
               <MenubarSeparator />
               <MenubarItem>Encontrar...</MenubarItem>
               <MenubarItem>Encontrar Seguinte</MenubarItem>
-              <MenubarItem>Find Previous</MenubarItem>
+              <MenubarItem>Encontrar anterior</MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSeparator />
