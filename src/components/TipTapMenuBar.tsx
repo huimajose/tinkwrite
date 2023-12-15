@@ -182,8 +182,8 @@ const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
       <button
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
-      > Refazer 
-        <Redo className="w-3 h-6" />
+      > Refazer <MenubarShortcut> CTRL+Z</MenubarShortcut>
+        
       </button>
     </MenubarItem>
           <MenubarSeparator />
