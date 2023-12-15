@@ -71,11 +71,9 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
         <MenubarTrigger>Ficheiro</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-           Nova aba <MenubarShortcut>⌘T</MenubarShortcut>
+           Nova folha <MenubarShortcut>⌘T</MenubarShortcut>
           </MenubarItem>
-          <MenubarItem>
-            Nova janela <MenubarShortcut>⌘N</MenubarShortcut>
-          </MenubarItem>
+         
           <MenubarItem disabled>Janela privada</MenubarItem>
           <MenubarSeparator />
           <MenubarSub>
