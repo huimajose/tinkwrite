@@ -54,7 +54,7 @@ const DashboardPage = async (props: Props) => {
           )}
 
           {/* display all the notes */}
-          <div className="grid sm:grid-cols-3 md:grid-cols-5 grid-cols-1 gap-3">
+          <div className="grid sm:grid-cols-9 md:grid-cols-5 grid-cols-1 gap-2">
             <CreateNoteDialog />
             <CreateProjectDialog />
             {notes?.map((note) => {
