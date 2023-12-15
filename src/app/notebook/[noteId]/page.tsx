@@ -146,7 +146,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
         <MenubarContent>
           <MenubarCheckboxItem>Mostrar sempre marcador</MenubarCheckboxItem>
           <MenubarCheckboxItem checked>
-            Always Show Full URLs
+           Mostrar sempre url completa
           </MenubarCheckboxItem>
           <MenubarSeparator />
           <MenubarItem inset>
