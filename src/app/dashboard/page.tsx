@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { createClient } from '@supabase/supabase-js'
+import {truncateText } from '@/lib/utils'
 
 type Props = {};
 
@@ -66,7 +67,7 @@ const DashboardPage = async (props: Props) => {
                     />
                     <div className="p-4">
                       <h3 className="text-xl font-semibold text-gray-900">
-                        {note.name}
+                      {truncateText(note.name, 18)} 
                       </h3>
                       <div className="h-1"></div>
                       <p className="text-sm text-gray-500">
