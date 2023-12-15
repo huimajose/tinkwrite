@@ -153,7 +153,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
             Recarregar <MenubarShortcut>⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled inset>
-            Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+            Forçar recarregar <MenubarShortcut>⇧⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarSeparator />
           <MenubarItem inset>Toggle Fullscreen</MenubarItem>
