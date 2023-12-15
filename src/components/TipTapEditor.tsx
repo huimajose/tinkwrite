@@ -10,6 +10,7 @@ import Text from "@tiptap/extension-text";
 import axios from "axios";
 import { NoteType } from "@/lib/db/schema";
 import { useCompletion } from "ai/react";
+import CharacterCount from '@tiptap/extension-character-count'
 
 type Props = { note: NoteType };
 
@@ -20,6 +21,7 @@ const TipTapEditor = ({ note }: Props) => {
     note['texto'] || `<h1>${note.name} </h1>`
   );
 
+  const limit = 80
  
   const { complete, completion } = useCompletion({
     api: "/api/completion",
@@ -48,7 +50,9 @@ const TipTapEditor = ({ note }: Props) => {
 
   const editor = useEditor({
     autofocus: true,
-    extensions: [StarterKit, customText],
+    extensions: [StarterKit, customText, CharacterCount.configure({
+      limit,
+    }),],
     content: editorState,
     onUpdate: ({ editor }) => {
       setEditorState(editor.getHTML());
