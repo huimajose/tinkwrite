@@ -105,7 +105,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
             <MenubarSubTrigger>Partilhar</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem>link</MenubarItem>
-              <MenubarItem>Messages</MenubarItem>
+              <MenubarItem>Mensagens</MenubarItem>
               <MenubarItem>Notas</MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
