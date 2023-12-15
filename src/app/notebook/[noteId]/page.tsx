@@ -77,14 +77,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           </span>
           <span className="inline-block mx-1"></span>
           <span className="text-stone-500 font-semibold"></span>
-          <div className="ml-auto">
-            <DeleteButton noteId={note.id} />
-            
-          </div>
-          <div className="ml-2">
-          
-            <ShareButton noteId={note.id} />
-          </div>
+         
           <div className="ml-2">
           
           <ExportButton noteId={note.id} />
@@ -112,6 +105,9 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <MenubarSeparator />
           <MenubarItem>
             Imprimir... <MenubarShortcut>⌘P</MenubarShortcut>
+          </MenubarItem>
+          <MenubarItem>
+            Sair<MenubarShortcut>⌘esc</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
