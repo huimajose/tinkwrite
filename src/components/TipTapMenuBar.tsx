@@ -16,24 +16,13 @@ import {
   Redo,
   Strikethrough,
   Undo,
+  Table2
 } from "lucide-react";
 import Link from "next/link";
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar"
-
+import Table from '@tiptap/extension-table'
+import TableCell from '@tiptap/extension-table-cell'
+import TableHeader from '@tiptap/extension-table-header'
+import TableRow from '@tiptap/extension-table-row'
 
 const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
   return (
@@ -137,6 +126,13 @@ const TipTapMenuBar = ({ editor }: { editor: Editor }) => {
         disabled={!editor.can().chain().focus().redo().run()}
       >
         <Redo className="w-6 h-6" />
+      </button>
+
+      <button
+        onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()
+        }
+      >
+        <Table2 className="w-6 h-6"  />
       </button>
   
     </div>
