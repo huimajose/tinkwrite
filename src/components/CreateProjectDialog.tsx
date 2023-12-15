@@ -42,7 +42,8 @@ const CreateProjectDialog = (props: Props) => {
       mutationFn: async () => {
         const response = await axios.post("/api/createProjectBook", {
           name: input,
-          userId: userId
+          userId: userId,
+          estado: fieldType
         });
         return response.data;
       },
@@ -56,7 +57,7 @@ const CreateProjectDialog = (props: Props) => {
       }
       createProject.mutate(undefined, {
         onSuccess: ({ note_id }) => {
-          console.log("Processo criado com sucesso!:", { note_id });
+          console.log("projecto criado com sucesso!:", { note_id });
           // hit another endpoint to uplod the temp dalle url to permanent firebase url
          
           router.push(`/notebook/${note_id}`);

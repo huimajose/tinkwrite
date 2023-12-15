@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   
   try {
     const body = await req.json();
-    const { name, userId } = body;
+    const { name, userId, estado } = body;
 
     const currentTimestamp = new Date().toISOString();
 
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     // Inserir no Supabase
     const { data, error } = await supabase
       .from('folders')
-      .insert({ 'name':name, 'userId': userId, 'criated': currentTimestamp }).select();
+      .insert({ 'name':name, 'userId': userId, 'statysType': estado, 'criated': currentTimestamp }).select();
 
     if (error) {
       console.error("Erro ao inserir no Supabase:", error);
