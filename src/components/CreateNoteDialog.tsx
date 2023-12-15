@@ -27,7 +27,8 @@ const CreateNoteDialog = (props: Props) => {
     mutationFn: async () => {
       const response = await axios.post("/api/createNoteBook", {
         name: input,
-        userId: userId,
+        userId: userId
+       
       });
       return response.data;
     },

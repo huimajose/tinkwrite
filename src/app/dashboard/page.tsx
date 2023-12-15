@@ -69,11 +69,11 @@ const DashboardPage = async (props: Props) => {
                     />
                     <div className="p-4">
                       <h3 className="text-xl font-semibold text-gray-900">
-                      {truncateText(note.name, 18)} 
+                      {truncateText(note.name, 10)} 
                       </h3>
                       <div className="h-1"></div>
                       <p className="text-sm text-gray-500">
-                      {new Date(note.criated).toLocaleDateString()} - 
+                    
                        {formatDateDistance(note.criated)}
                       </p>
                     </div>

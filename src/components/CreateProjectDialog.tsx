@@ -14,8 +14,15 @@ import { Button } from "./ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
-import React from 'react'
+import React, {useState} from 'react'
 
 interface Props {
     
@@ -27,13 +34,15 @@ const CreateProjectDialog = (props: Props) => {
     const router = useRouter();
     const [input, setInput] = React.useState("");
     const {  userId } = useAuth();
+    const [fieldType, setFieldType] = useState('')
    
+    console.log("dados do from: ",fieldType)
   
-    const createNotebook = useMutation({
+    const createProject = useMutation({
       mutationFn: async () => {
-        const response = await axios.post("/api/createNoteBook", {
+        const response = await axios.post("/api/createProjectBook", {
           name: input,
-          userId: userId,
+          userId: userId
         });
         return response.data;
       },
@@ -45,7 +54,7 @@ const CreateProjectDialog = (props: Props) => {
         window.alert("Por favor digite o nome ou numero do processo");
         return;
       }
-      createNotebook.mutate(undefined, {
+      createProject.mutate(undefined, {
         onSuccess: ({ note_id }) => {
           console.log("Processo criado com sucesso!:", { note_id });
           // hit another endpoint to uplod the temp dalle url to permanent firebase url
@@ -82,6 +91,17 @@ const CreateProjectDialog = (props: Props) => {
             placeholder="Dê um titulo ao seu projecto..."
           />
           <div className="h-4"></div>
+          <Select onValueChange={(value) => setFieldType(value)} value={fieldType}>
+    <SelectTrigger className="w-[460px]">
+    <SelectValue placeholder="Visibilidade" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="1">Publico</SelectItem>
+    <SelectItem value="2">Privado</SelectItem>
+   
+  </SelectContent>
+</Select>
+          <div className="h-4"></div>
           <div className="flex items-center gap-2">
             <Button type="reset" variant={"secondary"}>
               Cancelar
@@ -89,9 +109,9 @@ const CreateProjectDialog = (props: Props) => {
             <Button
               type="submit"
               className="bg-green-600"
-              disabled={createNotebook.isLoading}
+              disabled={createProject.isLoading}
             >
-              {createNotebook.isLoading && (
+              {createProject.isLoading && (
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
               )}
               Criar
