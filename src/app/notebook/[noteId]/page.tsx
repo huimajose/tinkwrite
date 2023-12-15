@@ -162,7 +162,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Profiles</MenubarTrigger>
+        <MenubarTrigger>Perfil</MenubarTrigger>
         <MenubarContent>
           <MenubarRadioGroup value="benoit">
             <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
