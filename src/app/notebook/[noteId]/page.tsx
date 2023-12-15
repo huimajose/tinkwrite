@@ -13,7 +13,21 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 import { createClient } from '@supabase/supabase-js'
-
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
 
 type Props = {
   params: {
@@ -75,7 +89,22 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           
           <ExportButton noteId={note.id} />
         </div>
-         
+        <Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Share</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+
         </div>
 
         <div className="h-4"></div>
