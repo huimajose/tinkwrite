@@ -1,6 +1,8 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+
 
 
  
