@@ -136,7 +136,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSeparator />
-          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Cortar</MenubarItem>
           <MenubarItem>Copy</MenubarItem>
           <MenubarItem>Paste</MenubarItem>
         </MenubarContent>
