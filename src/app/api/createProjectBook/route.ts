@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     const insertedId = data[0].id;
 
     // Retorne uma resposta de sucesso com o ID
-    return  NextResponse.json({note_id: insertedId});
+    return  NextResponse.json({project_id: insertedId});
   } catch (error) {
     console.error("Erro:", error);
 
