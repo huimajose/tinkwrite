@@ -150,7 +150,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           </MenubarCheckboxItem>
           <MenubarSeparator />
           <MenubarItem inset>
-            Reload <MenubarShortcut>⌘R</MenubarShortcut>
+            Recarregar <MenubarShortcut>⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled inset>
             Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
