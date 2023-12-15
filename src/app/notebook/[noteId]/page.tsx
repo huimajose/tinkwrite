@@ -72,7 +72,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
            
           </span>
           <span className="inline-block mx-1"></span>
-          <span className="text-stone-500 font-semibold"></span>
+         
          
           
         <Menubar>
