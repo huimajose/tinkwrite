@@ -128,7 +128,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <MenubarSub>
             <MenubarSubTrigger>Encontrar</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem>Search the web</MenubarItem>
+              <MenubarItem>Buscar na web</MenubarItem>
               <MenubarSeparator />
               <MenubarItem>Find...</MenubarItem>
               <MenubarItem>Find Next</MenubarItem>
