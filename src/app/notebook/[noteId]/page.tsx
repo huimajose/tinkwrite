@@ -65,7 +65,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
   return (
     <div className="min-h-screen grainy p-8">
       <div className="max-w-4xl mx-auto">
-        <div className=" shadow-xl  p-4 flex items-center">      
+        <div className="  p-4 flex items-center">      
         <Menubar style={{ width: '1000px' }}>
       <MenubarMenu>
         <MenubarTrigger>Ficheiro</MenubarTrigger>
