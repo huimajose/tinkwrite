@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     // Inserir no Supabase
     const { data, error } = await supabase
       .from('folders')
-      .insert({ 'name':name, 'userId': userId, 'statysType': estado, 'criated': currentTimestamp }).select();
+      .insert({ 'name':name, 'userId': userId, 'criated': currentTimestamp,'statusType': estado }).select();
 
     if (error) {
       console.error("Erro ao inserir no Supabase:", error);

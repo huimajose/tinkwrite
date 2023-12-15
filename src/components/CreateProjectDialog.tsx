@@ -31,43 +31,58 @@ interface Props {
 
 
 const CreateProjectDialog = (props: Props) => {
-    const router = useRouter();
-    const [input, setInput] = React.useState("");
-    const {  userId } = useAuth();
-    const [fieldType, setFieldType] = useState('')
-   
-    console.log("dados do from: ",fieldType)
-  
-    const createProject = useMutation({
-      mutationFn: async () => {
-        const response = await axios.post("/api/createProjectBook", {
-          name: input,
-          userId: userId,
-          estado: fieldType
-        });
-        return response.data;
+  const router = useRouter();
+  const [input, setInput] = React.useState("");
+  const { userId } = useAuth();
+  const [fieldType, setFieldType] = useState('');
+
+  const createNotebook = useMutation({
+    mutationFn: async () => {
+      const response = await axios.post("/api/createNoteBook", {
+        name: input,
+        userId: userId
+      });
+      return response.data;
+    },
+  });
+
+  const createProject = useMutation({
+    mutationFn: async () => {
+      // Criar o projeto
+      const projectResponse = await axios.post("/api/createProjectBook", {
+        name: input,
+        userId: userId,
+        estado: fieldType
+      });
+
+      // Se o projeto for criado com sucesso, criar a nota correspondente
+      if (!projectResponse.error) {
+        await createNotebook.mutate();
+      }
+
+      return projectResponse.data;
+    },
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (input === "") {
+      window.alert("Por favor digite o nome ou numero do processo");
+      return;
+    }
+
+    // Criar projeto e nota correspondente
+    await createProject.mutate(undefined, {
+      onSuccess: ({ note_id }) => {
+        console.log("Projeto criado com sucesso!:", { note_id });
+        router.push(`/notebook/${note_id}`);
+      },
+      onError: (error) => {
+        console.error(error);
+        window.alert("Ocorreu um erro ao guardar o projeto!");
       },
     });
-  
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (input === "") {
-        window.alert("Por favor digite o nome ou numero do processo");
-        return;
-      }
-      createProject.mutate(undefined, {
-        onSuccess: ({ note_id }) => {
-          console.log("projecto criado com sucesso!:", { note_id });
-          // hit another endpoint to uplod the temp dalle url to permanent firebase url
-         
-          router.push(`/notebook/${note_id}`);
-        },
-        onError: (error) => {
-          console.error(error);
-          window.alert("Ocorreu um erro ao guardar o processo!");
-        },
-      });
-    };
+  };
     return (
         <Dialog>
       <DialogTrigger>
