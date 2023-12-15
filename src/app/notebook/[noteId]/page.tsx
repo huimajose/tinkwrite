@@ -122,7 +122,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
             desfazer <MenubarShortcut>⌘Z</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
-            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+            Refazer <MenubarShortcut>⇧⌘Z</MenubarShortcut>
           </MenubarItem>
           <MenubarSeparator />
           <MenubarSub>
