@@ -172,7 +172,7 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
           <MenubarSeparator />
           <MenubarItem inset>Editar</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem inset>Add Profile...</MenubarItem>
+          <MenubarItem inset>Add Perfil</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
